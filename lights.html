@@ -13,9 +13,9 @@
 
         changeColors();
         
-        canvas.addEventListener("mousemove", function(){
+        function onFrame(event) {
             changeColors();
-        });
+        }
         
         function randomColor(){
             //pick a red from 0 - 255
@@ -31,8 +31,7 @@
         function changeColors(){
             for (var x =50; x <= canvas.width-50;x+=100){
                 for (var y = 50;y <= canvas.height-50;y+=100){
-                    myCircle = new Path.Circle(new Point(x,y),10);
-                    myCircle.fillColor = randomColor();
+                    new Path.Circle(new Point(x,y),10).fillColor = randomColor();
                 }   
             }
         }
